@@ -92,8 +92,33 @@ a.button {
 }
 
 header {
-    background-color: red;
     padding: 20px 20px;
+    .container {
+        max-width: 1170px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        .logo {
+            display: flex;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            ul {
+                display: flex;
+                li {
+                    margin: 0 10px;
+                    list-style: none;
+                    a {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $color-dark;
+                    }
+                }
+                
+            }
+        }
+    }
 }
 
 .hero {
@@ -429,7 +454,7 @@ header {
             }
             
             a {
-                font-weight: 800;
+                font-weight: 700;
             }
 
         }
@@ -437,6 +462,14 @@ header {
             a {
                 font-weight: 400;
                 color: $color-dark;
+            }
+        }
+        .block:nth-of-type(2) {
+            p {
+                margin-bottom: 40px;
+            }
+            img {
+                width: 150px;
             }
         }
         .block:last-child {
@@ -448,8 +481,16 @@ header {
 }
 
 .footer-bottom {
-    background-color:chocolate;
+    background-color: $tertiary-color;
     padding: 15px 0;
+    .container {
+        max-width: 1170px;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 auto;
+        font-weight: 500;
+        color: $color-light;
+    }
 }
 
 
