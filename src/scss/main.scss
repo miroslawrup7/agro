@@ -7,7 +7,6 @@ $primary-color: #00A015;
 $secondary-color: #EEEEEE;
 $tertiary-color: #C8C8C8;
 
-
 * {
     margin: 0;
     padding: 0;
@@ -102,6 +101,7 @@ a.button {
 
 header {
     padding: 20px 20px;
+    height: 155px;
     .container {
         max-width: 1170px;
         display: flex;
@@ -111,6 +111,8 @@ header {
             display: flex;
         }
         nav {
+            height: 115px;
+            width: 520px;
             display: flex;
             align-items: center;
             ul {
@@ -119,12 +121,72 @@ header {
                     margin: 0 10px;
                     list-style: none;
                     a {
+                        position: relative;
                         font-size: 16px;
                         font-weight: 500;
                         color: $color-dark;
+                        &::after {
+                            display: block;
+                            position: absolute;
+                            content: "";
+                            width: 0;
+                            height: 2px;
+                            top: -2px;
+                            left: 0;
+                            right: 0;
+                            background-color: $primary-color;
+                            transition: all .3s ease;
+                            margin: 0 auto;
+                            opacity: 0;
+                        }
+                        &:hover::after {
+                            width: 100%;
+                            opacity: 1;
+                        }
+                        &:hover {
+                            opacity: 0.9;
+                            color: $primary-color;
+                        }
+                    &.active {
+                        color: $primary-color;
+                        }
+                    }
+                    .sub-menu {
+                        z-index: 2;
+                        right: 0;
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        background-color: white;
+                        box-shadow: rgba(149,157,165,.2) 0 8px 24px;
+                        min-width: max-content;
+                        visibility: hidden;
+                        opacity: 0;
+                        li {
+                            padding: 10px 20px;
+                        }
+                    }
+                &.parent-sub-menu {
+                    position: relative;
+                    a {
+                        svg {
+                            height: 10px;
+                            padding-bottom: 2px;
+                        }
+                    }
+                    }
+                &.parent-sub-menu:hover .sub-menu {
+                    visibility: visible;
+                    opacity: 1;
+                    }
+                
+                &.parent-sub-menu:hover svg {
+                    fill: $primary-color;
+                    }
+                &.parent-sub-menu:hover > a {
+                   color: $primary-color;
                     }
                 }
-                
             }
         }
     }
