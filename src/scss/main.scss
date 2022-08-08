@@ -83,7 +83,16 @@ a.button {
     font-size: 16px;
     font-weight: 600; 
     line-height: 15px;
+    &:hover {
+        opacity: 0.9;
+    }
+    &.to-gray:hover {
+        border: solid white 2px;
+        background-color: transparent;
+    }
 }
+
+
 
 .wrapper {
     display: flex; 
@@ -778,6 +787,7 @@ header {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+        padding: 40px;
         h2 {
 
         }
