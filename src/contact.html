@@ -85,18 +85,23 @@
                         <form action="">
                             <label for="name">Imię: <span>*</span></label>
                             <input type="text" name="name" id="name">
+                            <p id="name-error" class="error">To pole jest wymagane.</p>
 
                             <label for="mail">E-mail: <span>*</span></label>
                             <input type="mail" name="mail" id="mail">
+                            <p id="mail-error" class="error">To pole jest wymagane.</p>
+                            <p id="mail-error2" class="error">Nieprawidłowy adres e-mail.</p>
 
                             <label for="message">Wiadomość: <span>*</span></label>
                             <textarea name="message" id="message"></textarea>
+                            <p id="message-error" class="error">To pole jest wymagane.</p>
 
                             <label>Checkboxes <span>*</span></label>
                             <div class="checkboxes">
                                 <input type="checkbox" name="agreement" id="agreement">
                                 <label for="agreement">Zgadzam się na przetwarzanie moich danych osobowych, które zostaną użyte jedynie w celu realizacji tego zapytania.</label>
                             </div>
+                            <p id="agreement-error" class="error">To pole jest wymagane.</p>
                             <input type="submit" value=Wyślij>
 
                         </form>
