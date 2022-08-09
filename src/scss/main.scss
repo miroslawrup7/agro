@@ -82,6 +82,7 @@ a.button {
     font-size: 16px;
     font-weight: 600; 
     line-height: 15px;
+    border: 2px solid $primary-color;
     &:hover {
         opacity: 0.9;
     }
@@ -1173,3 +1174,171 @@ header {
         }
     }
 }
+
+@media (max-width: 600px) {
+
+    p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    h2 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .text {
+        padding: 60px 20px 0;
+      }
+
+    .img-right, .img-right.offer {
+        .container {
+            flex-wrap: wrap;
+            .content {
+                width: 100%;
+                padding: 40px;
+            }
+            .image {
+                width: 100%;
+            }
+        }
+    }
+
+    .img-left {
+        padding: 60px 20px 20px;
+        .container {
+            flex-wrap: wrap;
+            .image {
+                width: 100%;
+            }
+            .content {
+                padding: 40px;
+                width: 100%;
+            }
+        }
+    }
+
+    .contact {
+        .container {
+            flex-wrap: wrap;
+            .content {
+                width: 100%;
+            }
+            .buttons {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+    
+    .map {
+        .container {
+            .content {
+                width :100%;
+            }
+            .image {
+                display: none;
+            }
+        }
+    }
+    .gallery {
+        display: flex;
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        img:nth-of-type(1) {
+            width: 48%;
+        }
+        img:nth-of-type(2) {
+            width: 48%;
+        }
+        img:nth-of-type(3) {
+            width: 100%;
+        }
+    }
+    .blocks {
+        padding: 40px 20px 20px;
+        .container {
+            flex-wrap: wrap;
+            .block {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .counters {
+        padding: 40px;
+        .container {
+            flex-wrap: wrap;
+            .counter:nth-child(1) {
+                margin-bottom: 20px;
+            }
+            .counter {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero.about, .hero.offer, .hero.realisations, .hero.contact  {
+        .container {
+            padding: 20px;
+            h1 {
+                font-size: 35px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    .hero.contact {
+        padding: 0;
+    }
+
+    .gallery.offer {
+        .container {
+            .images {
+                flex-wrap: wrap;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .boxes-section {
+        .container {
+            p {
+                margin-bottom: 20px;
+            }
+            .boxes {
+                flex-wrap: wrap;
+                .box {
+                    width: 100%;
+                    padding: 20px;
+                    h3 {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .text-boxes {
+        .container {
+            flex-wrap: wrap;
+            .text-box {
+                width: 100%;
+            }
+            .contact-form {
+                width: 100%;
+                form {
+                    input {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
