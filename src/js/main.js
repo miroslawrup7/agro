@@ -1,3 +1,5 @@
+// contact form validation
+
 const nameLoc = document.querySelector("#name");
 const mailLoc = document.querySelector("#mail");
 const messageLoc = document.querySelector("#message");
@@ -14,7 +16,6 @@ const buttonLoc = document.querySelector('input[type="submit"]');
 let validationPass = true;
 
 const validateEmpty = (e) => {
-    console.log(e.target.id);
     input = e.target;
     validateEmptyAll(input);
 };
@@ -97,13 +98,31 @@ const validateEmailAll = (emailLoc) => {
     }
 };
 
-nameLoc.addEventListener("blur", validateEmpty);
-nameLoc.addEventListener("keyup", validateEmpty);
-mailLoc.addEventListener("blur", validateEmail);
-mailLoc.addEventListener("keyup", validateEmpty);
-messageLoc.addEventListener("blur", validateEmpty);
-messageLoc.addEventListener("keyup", validateEmpty);
+try {
+    nameLoc.addEventListener("blur", validateEmpty);
+    nameLoc.addEventListener("keyup", validateEmpty);
+    mailLoc.addEventListener("blur", validateEmail);
+    mailLoc.addEventListener("keyup", validateEmpty);
+    messageLoc.addEventListener("blur", validateEmpty);
+    messageLoc.addEventListener("keyup", validateEmpty);
 
-agreementLoc.addEventListener("click", validateCheckbox);
+    agreementLoc.addEventListener("click", validateCheckbox);
 
-buttonLoc.addEventListener("click", validateAll);
+    buttonLoc.addEventListener("click", validateAll);
+} catch (e) {}
+
+// mobile menu
+
+const subMenuTitleLoc = document.querySelector(".parent-sub-menu");
+const subMenuLoc = document.querySelector(".sub-menu");
+
+subMenuTitleLoc.addEventListener("click", () => {
+    subMenuLoc.classList.toggle("active");
+});
+
+const hamburgerLoc = document.querySelector(".hamburger");
+const mobileMenuLoc = document.querySelector("header nav > ul");
+
+hamburgerLoc.addEventListener("click", () => {
+    mobileMenuLoc.classList.toggle("mobile");
+});
