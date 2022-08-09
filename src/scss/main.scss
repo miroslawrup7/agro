@@ -562,6 +562,7 @@ header {
         margin: 0 auto;
         font-weight: 500;
         color: $color-light;
+        padding: 0 40px;
     }
 }
 
@@ -698,6 +699,7 @@ header {
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
             text-align: left;
+            line-height: 78px;
         }
     }
 }
@@ -1042,6 +1044,132 @@ header {
         .map-box {
           
             width: 100%;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+
+    h1 {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 35px;
+        line-height: 42px;
+    }
+
+    a.button {
+        font-size: 15px;
+        padding: 15px 30px;
+    }
+
+    header {
+        height: 50px;
+        padding: 0;
+        .container {
+            max-width: none;
+            height: 100%;
+            padding: 0 15px;
+            .logo {
+                align-items: center;
+                img {
+                    height: 25px;
+                }
+            }
+            nav {
+                display: none;
+            }
+        }
+    }
+
+    .img-right {
+        .container {
+            .content {
+                width: 66.66666%;
+            }
+            .image {
+                width: 33.33333%;
+                height: auto;
+            }
+        }
+    }
+
+    .img-left {
+        .container {
+            .image {
+                height: auto;
+            }
+        }
+    }
+
+    .contact {
+        .container {
+            .content {
+                padding: 20px 40px;
+                h2 {
+                    margin-bottom: 20px;
+                }
+                p {
+                    margin-bottom: 30px;
+                    font-size: 21px;
+                }
+                
+            }
+            .buttons {
+                padding: 20px 40px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                a.button {
+                    font-size: 20px;
+                    padding: 25px 75px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .footer-top {
+        .container {
+            flex-direction: column;
+            .block {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero.offer {
+        .container {
+            h1 {
+                font-size: 45px;
+                line-height: 54px;
+            }
+        }
+    }
+    
+    .hero.realisations {
+        .container {
+            h1 {
+                font-size: 45px;
+                font-weight: 54px;
+            }
+        }
+    }
+
+    .text-boxes {
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .map {
+        
+        .container {
+            .image {
+                img {
+                    object-position: 80%;
+                }
+            }
         }
     }
 }
