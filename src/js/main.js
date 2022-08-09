@@ -115,14 +115,26 @@ try {
 
 const subMenuTitleLoc = document.querySelector(".parent-sub-menu");
 const subMenuLoc = document.querySelector(".sub-menu");
+const hamburgerLoc = document.querySelector(".hamburger");
+const mobileMenuLoc = document.querySelector("header nav > ul");
+const closeMobileMenuBtnLoc = document.querySelector(".close-btn");
+const closeMobileMenuBarsLoc = document.querySelector(".close-btn .bars");
+const hamburgerBarsLoc = document.querySelector(".hamburger .bars");
 
 subMenuTitleLoc.addEventListener("click", () => {
     subMenuLoc.classList.toggle("active");
 });
 
-const hamburgerLoc = document.querySelector(".hamburger");
-const mobileMenuLoc = document.querySelector("header nav > ul");
-
 hamburgerLoc.addEventListener("click", () => {
-    mobileMenuLoc.classList.toggle("mobile");
+    mobileMenuLoc.classList.toggle("show");
+    closeMobileMenuBarsLoc.classList.remove("ham");
+    subMenuLoc.classList.remove("active");
+    hamburgerBarsLoc.classList.toggle("ham");
+});
+
+closeMobileMenuBtnLoc.addEventListener("click", () => {
+    mobileMenuLoc.classList.remove("show");
+    closeMobileMenuBarsLoc.classList.add("ham");
+    subMenuLoc.classList.remove("active");
+    hamburgerBarsLoc.classList.add("ham");
 });
