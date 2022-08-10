@@ -138,3 +138,117 @@ closeMobileMenuBtnLoc.addEventListener("click", () => {
     subMenuLoc.classList.remove("active");
     hamburgerBarsLoc.classList.add("ham");
 });
+
+// languages
+
+const language = document.querySelectorAll("nav .lng");
+
+language.forEach(function (el) {
+    el.addEventListener("click", (e) => {
+        let lang = e.currentTarget.dataset.lang;
+
+        saveLng(lang);
+
+        languageSet(lang);
+    });
+});
+
+const languageSet = (lang) => {
+    for (let objKey in h_translate[lang]) {
+        document.getElementById(objKey).innerHTML = h_translate[lang][objKey];
+    }
+
+    for (let objKey in f_translate[lang]) {
+        document.getElementById(objKey).innerHTML = f_translate[lang][objKey];
+    }
+
+    if (document.body.dataset.page === "home") {
+        for (let objKey in ch_translate[lang]) {
+            document.getElementById(objKey).innerHTML =
+                ch_translate[lang][objKey];
+        }
+    }
+
+    // if (document.body.dataset.page === "about") {
+    //     for (let objKey in ca_translate[lang]) {
+    //         document.getElementById(objKey).innerHTML =
+    //             ca_translate[lang][objKey];
+    //     }
+    // }
+
+    // if (document.body.dataset.page === "offer") {
+    //     for (let objKey in co_translate[lang]) {
+    //         document.getElementById(objKey).innerHTML =
+    //             co_translate[lang][objKey];
+    //     }
+    // }
+
+    // if (document.body.dataset.page === "realisations") {
+    //     for (let objKey in cr_translate[lang]) {
+    //         document.getElementById(objKey).innerHTML =
+    //             cr_translate[lang][objKey];
+    //     }
+    // }
+
+    // if (document.body.dataset.page === "contact") {
+    //     for (let objKey in cc_translate[lang]) {
+    //         document.getElementById(objKey).innerHTML =
+    //             cc_translate[lang][objKey];
+    //     }
+    // }
+};
+
+const createDB = () => {
+    let openRequest = indexedDB.open("languageDB", 1);
+
+    openRequest.onupgradeneeded = function () {
+        let db = openRequest.result;
+        if (!db.objectStoreNames.contains("language")) {
+            db.createObjectStore("language", { autoIncrement: true });
+        }
+    };
+};
+
+createDB();
+
+const saveLng = (lng) => {
+    let openRequest = indexedDB.open("languageDB");
+
+    openRequest.onsuccess = function () {
+        let db = openRequest.result;
+        let transaction = db.transaction("language", "readwrite");
+        let languageTrans = transaction.objectStore("language");
+
+        let lang = lng;
+
+        let request = languageTrans.put(lang, "lang");
+
+        request.onsuccess = function () {};
+
+        request.onerror = function () {
+            console.log("Error", request.error);
+        };
+    };
+};
+
+const getLng = () => {
+    let openRequest = indexedDB.open("languageDB");
+
+    openRequest.onsuccess = function () {
+        let db = openRequest.result;
+        let transaction = db.transaction("language");
+        let languageTrans = transaction.objectStore("language");
+
+        let request = languageTrans.get("lang");
+
+        request.onsuccess = function () {
+            languageSet(request.result);
+        };
+
+        request.onerror = function () {
+            console.log("Error", request.error);
+        };
+    };
+};
+
+getLng();

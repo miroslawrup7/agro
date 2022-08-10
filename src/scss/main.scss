@@ -113,9 +113,10 @@ header {
         }
         nav {
             height: 115px;
-            width: 520px;
+            width: 600px;
             display: flex;
             align-items: center;
+            justify-content: right;
             ul {
                 display: flex;
                 li {
