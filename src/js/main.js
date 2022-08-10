@@ -169,12 +169,12 @@ const languageSet = (lang) => {
         }
     }
 
-    // if (document.body.dataset.page === "about") {
-    //     for (let objKey in ca_translate[lang]) {
-    //         document.getElementById(objKey).innerHTML =
-    //             ca_translate[lang][objKey];
-    //     }
-    // }
+    if (document.body.dataset.page === "about") {
+        for (let objKey in ca_translate[lang]) {
+            document.getElementById(objKey).innerHTML =
+                ca_translate[lang][objKey];
+        }
+    }
 
     // if (document.body.dataset.page === "offer") {
     //     for (let objKey in co_translate[lang]) {
