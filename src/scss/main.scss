@@ -961,7 +961,7 @@ header {
                 label {
                     margin: 10px 0 4px 0;
                     font-weight: 700;
-                    span {
+                    span:nth-of-type(2) {
                         color: red;
                         font-weight: 400;
                     }
@@ -1009,6 +1009,7 @@ header {
                     padding: 10px 15px;
                     font-weight: 700;
                     font-size: 16px;
+                    cursor: pointer;
                 }
 
                 textarea {

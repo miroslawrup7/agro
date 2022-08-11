@@ -5,11 +5,11 @@ const mailLoc = document.querySelector("#mail");
 const messageLoc = document.querySelector("#message");
 const agreementLoc = document.querySelector("#agreement");
 
-const nameErrLoc = document.querySelector("#name-error");
-const mailErrLoc = document.querySelector("#mail-error");
-const mailErrLoc2 = document.querySelector("#mail-error2");
-const messageErrLoc = document.querySelector("#message-error");
-const agreementErrLoc = document.querySelector("#agreement-error");
+const nameErrLoc = document.querySelector("#name_error");
+const mailErrLoc = document.querySelector("#mail_error");
+const mailErrLoc2 = document.querySelector("#mail_error2");
+const messageErrLoc = document.querySelector("#message_error");
+const agreementErrLoc = document.querySelector("#agreement_error");
 
 const buttonLoc = document.querySelector('input[type="submit"]');
 
@@ -176,26 +176,44 @@ const languageSet = (lang) => {
         }
     }
 
-    // if (document.body.dataset.page === "offer") {
-    //     for (let objKey in co_translate[lang]) {
-    //         document.getElementById(objKey).innerHTML =
-    //             co_translate[lang][objKey];
-    //     }
-    // }
+    if (document.body.dataset.page === "offer") {
+        for (let objKey in co_translate[lang]) {
+            document.getElementById(objKey).innerHTML =
+                co_translate[lang][objKey];
+        }
+    }
 
-    // if (document.body.dataset.page === "realisations") {
-    //     for (let objKey in cr_translate[lang]) {
-    //         document.getElementById(objKey).innerHTML =
-    //             cr_translate[lang][objKey];
-    //     }
-    // }
+    if (document.body.dataset.page === "realisations") {
+        for (let objKey in cr_translate[lang]) {
+            document.getElementById(objKey).innerHTML =
+                cr_translate[lang][objKey];
+        }
+    }
 
-    // if (document.body.dataset.page === "contact") {
-    //     for (let objKey in cc_translate[lang]) {
-    //         document.getElementById(objKey).innerHTML =
-    //             cc_translate[lang][objKey];
-    //     }
-    // }
+    if (document.body.dataset.page === "realisations") {
+        for (let objKey in cr_translate_repeat[lang]) {
+            for (let loc of document.getElementsByClassName(objKey)) {
+                console.log(loc);
+                loc.innerHTML = cr_translate_repeat[lang][objKey];
+            }
+        }
+    }
+
+    if (document.body.dataset.page === "contact") {
+        for (let objKey in cc_translate[lang]) {
+            document.getElementById(objKey).innerHTML =
+                cc_translate[lang][objKey];
+        }
+        if (lang === "pl") {
+            document.getElementById("sendBtn").value = "Wyślij";
+        }
+        if (lang === "en") {
+            document.getElementById("sendBtn").value = "Send";
+        }
+        if (lang === "de") {
+            document.getElementById("sendBtn").value = "Senden";
+        }
+    }
 };
 
 const createDB = () => {
