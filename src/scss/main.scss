@@ -237,9 +237,9 @@ header {
 
 .gallery {
     display: flex;
-    gap: 7px;
+    justify-content: space-between;
     img {
-        width: 33.33333%
+        width: 33%;
     }
 }
 
